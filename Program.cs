@@ -1,9 +1,18 @@
-﻿using System;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Text;
 
 namespace homeworkpractice_2._0 
 {
     internal class Program
     {
+        public interface IProduct
+        {
+            public void productDetails();
+        }
         public class Factory
         {
             public int employeeNumber;
@@ -29,9 +38,23 @@ namespace homeworkpractice_2._0
                 product = "Toy train";
             }
         }
+
+        public class product : IProduct
+        {
+            string productName;
+            int productCode;
+            string productSafteyLevel;
+            public void productDetails()
+                {
+                    productName = "Custom";
+                    productCode = 28374678;
+                    productSafteyLevel = "10+";
+
+                }
+
         static void Main(string[] args)
         {
-
+            IProduct product = new product();
         }
     }
 }
