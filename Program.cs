@@ -23,6 +23,11 @@ namespace homeworkpractice_2._0
 
             public int productCount{get; }
 
+            /// <summary>
+            /// this is the part of the inheritance whre we define specifically 
+            /// how the factory operates and how and what is going to work and 
+            /// be defined into the factory class
+            /// <summary/>
             public Factory(string employeeName, int employeeNumber, string product)
             {
                 this.employeeName = employeeName;
