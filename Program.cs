@@ -1,9 +1,18 @@
-﻿using System;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Text;
 
 namespace homeworkpractice_2._0 
 {
     internal class Program
     {
+        public interface IProduct
+        {
+            public void productDetails();
+        }
         public class Factory
         {
             public int employeeNumber;
@@ -24,28 +33,36 @@ namespace homeworkpractice_2._0
             }
         }
 
-        public interface IProduct 
-        {
-            public string productName{get; set;}
 
-            public string productDescription{get; set;}
-        }
-
-        public class Employee : Factory : IProduct
+        public class Employee : Factory
         {
             public Employee(string employeeName, int employeeNumber, string product) : base(employeeName, employeeNumber, product)
             {
                 employeeName = "Evan";
                 employeeNumber = 172646;
                 product = "Toy train";
-                this.productName = "Toy train";
-                this.productDescription = "it needs to run on sold tracks";
             }
         }
 
+
+        public class product : IProduct
+
+        {
+            string productName;
+            int productCode;
+            string productSafteyLevel;
+            public void productDetails()
+                {
+                    productName = "Custom";
+                    productCode = 28374678;
+                    productSafteyLevel = "10+";
+
+                }
+
         static void Main(string[] args)
         {
-
+            IProduct product = new product();
         }
     }
+}
 }
