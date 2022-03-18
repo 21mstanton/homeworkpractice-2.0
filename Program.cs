@@ -64,9 +64,45 @@ namespace homeworkpractice_2._0
 
                 }
 
-        static void Main(string[] args)
+    //     static void Main(string[] args)
+    //     {
+    //         IProduct product = new product();
+    //     }
+    // }
+
+    //this is ch7 through finish reading practice.
+    public class PdaItem
+    {
+        [disallowNull]
+        public string? Name {get; set;}
+
+        public DateTime LastUpdated {get; set;}
+
+        public class Contact : PdaItem
         {
-            IProduct product = new product();
+            public string Address {get; set;}
+            public string phone {get; set;}
+
+        }
+
+        public class Program
+        {
+            public static void Main()
+            {
+                Contact contact = new Contact();
+                contact.Name = "Inigo Montoya";
+                //more main example
+            }
+
+        }
+
+        class GPSCoordinates
+        {
+            public static implicit operator UTMCoordinates(GPSCoordinates coordinates)
+            {
+                // method examlpe
+            }
+        }
         }
     }
 }
